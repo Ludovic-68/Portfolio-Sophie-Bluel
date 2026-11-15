@@ -2,6 +2,8 @@
 
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
+let projets = []; // Liste de tous les projets, remplie par getWorks()
+
 
 // Récupération des données getWorksde l'API
 
@@ -13,15 +15,21 @@ async function getWorks() {
       throw new Error(`Statut de réponse : ${reponse.status}`);
     }
 
-    const projets = await reponse.json();
-    for (let i = 0; i < projets.length; i++) {
-        afficherProjet(projets[i]);
-    }
+    projets = await reponse.json();
+    afficherGalerie(projets);
   } catch (erreur) {
     console.error(erreur.message);
   }
 }
 getWorks();
+
+function afficherGalerie(liste) {
+  gallery.textContent = "";
+  for (let i = 0; i < liste.length; i++) {
+    afficherProjet(liste[i]);
+  }
+}
+
 
 function afficherProjet(projet) {
   const figure = document.createElement("figure");
@@ -41,6 +49,9 @@ function afficherProjet(projet) {
 function afficherBoutonTous() {
   const bouton = document.createElement("button");
   bouton.textContent = "Tous";
+  bouton.addEventListener("click", function () {
+    afficherGalerie(projets);
+  });
   filters.appendChild(bouton);
 }
 afficherBoutonTous();
