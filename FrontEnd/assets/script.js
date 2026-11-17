@@ -77,6 +77,17 @@ getCategories();
 function afficherCategorie(categorie) {
   const bouton = document.createElement("button");
   bouton.textContent = categorie.name;
+
+  bouton.addEventListener("click", function () {
+    const projetsFiltres = [];
+    for (let i = 0; i < projets.length; i++) {
+      if (projets[i].categoryId === categorie.id) {
+        projetsFiltres.push(projets[i]);
+      }
+    }
+    afficherGalerie(projetsFiltres);
+  });
+
   filters.appendChild(bouton);
 }
 

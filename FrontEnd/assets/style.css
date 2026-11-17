@@ -151,10 +151,6 @@ li:hover {
 	color: white;
 }
 
-.filters button.active {
-	background-color: #1D6154;
-	color: white;
-}
 
 .gallery {
 	width: 100%;
