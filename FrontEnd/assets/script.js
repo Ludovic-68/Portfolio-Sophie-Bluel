@@ -4,8 +4,7 @@ const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
 let projets = []; // Liste de tous les projets, remplie par getWorks()
 
-
-// Récupération des données getWorksde l'API
+// Récupération des travaux depuis l'API
 
 async function getWorks() {
   const url = "http://localhost:5678/api/works";
@@ -14,7 +13,6 @@ async function getWorks() {
     if (!reponse.ok) {
       throw new Error(`Statut de réponse : ${reponse.status}`);
     }
-
     projets = await reponse.json();
     afficherGalerie(projets);
   } catch (erreur) {
@@ -30,10 +28,8 @@ function afficherGalerie(liste) {
   }
 }
 
-
 function afficherProjet(projet) {
   const figure = document.createElement("figure");
-
   const image = document.createElement("img");
   image.src = projet.imageUrl;
   image.alt = projet.title;
@@ -42,7 +38,6 @@ function afficherProjet(projet) {
   figure.append(image, legende);
   gallery.appendChild(figure);
 }
-
 
 // Récupération des données getCategories de l'API
 
