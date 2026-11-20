@@ -39,12 +39,16 @@ function afficherProjet(projet) {
   gallery.appendChild(figure);
 }
 
-// Récupération des données getCategories de l'API
+// Récupération des données getCategories de l'API (Filtres)
 
 function afficherBoutonTous() {
   const bouton = document.createElement("button");
   bouton.textContent = "Tous";
+  bouton.classList.add("active");
+
   bouton.addEventListener("click", function () {
+    filters.querySelector(".active").classList.remove("active");
+    bouton.classList.add("active");
     afficherGalerie(projets);
   });
   filters.appendChild(bouton);
@@ -74,6 +78,8 @@ function afficherCategorie(categorie) {
   bouton.textContent = categorie.name;
 
   bouton.addEventListener("click", function () {
+    filters.querySelector(".active").classList.remove("active");
+    bouton.classList.add("active");
     const projetsFiltres = [];
     for (let i = 0; i < projets.length; i++) {
       if (projets[i].categoryId === categorie.id) {
