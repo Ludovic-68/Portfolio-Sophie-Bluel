@@ -51,6 +51,7 @@ function afficherBoutonTous() {
     bouton.classList.add("active");
     afficherGalerie(projets);
   });
+  
   filters.appendChild(bouton);
 }
 afficherBoutonTous();
