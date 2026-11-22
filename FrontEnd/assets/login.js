@@ -19,7 +19,7 @@ formulaire.addEventListener("submit", async function (event) {
 
     if (reponse.ok) { // Vérifie si la réponse est réussie (code de statut 200-299)
       const resultat = await reponse.json();
-      console.log(resultat);
+      localStorage.setItem("token", resultat.token);
     }
   } catch (erreur) {
     console.error(erreur.message);
