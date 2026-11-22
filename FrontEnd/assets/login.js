@@ -20,6 +20,7 @@ formulaire.addEventListener("submit", async function (event) {
     if (reponse.ok) { // Vérifie si la réponse est réussie (code de statut 200-299)
       const resultat = await reponse.json();
       localStorage.setItem("token", resultat.token);
+      window.location.href = "./index.html";
     }
   } catch (erreur) {
     console.error(erreur.message);
