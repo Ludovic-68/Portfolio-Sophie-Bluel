@@ -285,3 +285,8 @@ nav li.courant {
 	color: black;
 	font-size: 14px;
 }
+
+#message-erreur {
+	color: red;
+	text-align: center;
+}
