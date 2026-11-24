@@ -2,6 +2,8 @@
 
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
+const token = localStorage.getItem("token");
+const bandeau = document.querySelector("#mode-edition");
 let projets = []; // Liste de tous les projets, remplie par getWorks()
 
 // Récupération des travaux depuis l'API
@@ -93,5 +95,15 @@ function afficherCategorie(categorie) {
   filters.appendChild(bouton);
 }
 
+// LocalStorage : Token
 
+if (token) {
+  console.log("Utilisateur connecté");
+} else {
+  console.log("Utilisateur non connecté");
+}
+
+if (token) {
+  bandeau.classList.remove("cache");
+}
 

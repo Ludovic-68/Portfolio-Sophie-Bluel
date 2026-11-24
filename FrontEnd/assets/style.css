@@ -290,3 +290,20 @@ nav li.courant {
 	color: red;
 	text-align: center;
 }
+
+#mode-edition {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	background-color: black;
+	font-size:16px;
+	color: white;
+	text-align: center;
+	padding-top: 21.5px;
+	padding-bottom: 21.5px;
+}
+
+#mode-edition.cache {
+	display: none;
+}

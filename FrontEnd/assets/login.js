@@ -1,13 +1,12 @@
 // Page de connexion : authentification de l'administrateur
-
 const formulaire = document.querySelector("#login form");
-const messageErreur = document.querySelector("#message-erreur")
+const messageErreur = document.querySelector("#message-erreur");
 
-
+// Fonction pour gérer la soumission du formulaire de connexion
 formulaire.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-   messageErreur.textContent = "";
+  messageErreur.textContent = "";
 
   const email = document.querySelector("#email").value;
   const motDePasse = document.querySelector("#password").value;
@@ -31,3 +30,5 @@ formulaire.addEventListener("submit", async function (event) {
     console.error(erreur.message);
   }
 });
+
+
