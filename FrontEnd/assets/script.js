@@ -4,6 +4,7 @@ const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
 const token = localStorage.getItem("token");
 const bandeau = document.querySelector("#mode-edition");
+const lienLogin = document.querySelector("#lien-login");
 let projets = []; // Liste de tous les projets, remplie par getWorks()
 
 // Récupération des travaux depuis l'API
@@ -98,12 +99,12 @@ function afficherCategorie(categorie) {
 // LocalStorage : Token
 
 if (token) {
-  console.log("Utilisateur connecté");
-} else {
-  console.log("Utilisateur non connecté");
-}
-
-if (token) {
   bandeau.classList.remove("cache");
-}
+  lienLogin.textContent = "logout";
 
+  lienLogin.addEventListener("click", function (event) {
+    event.preventDefault();
+    localStorage.removeItem("token");
+    window.location.href = "./index.html";
+  });
+}
