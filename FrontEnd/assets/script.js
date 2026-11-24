@@ -101,6 +101,7 @@ function afficherCategorie(categorie) {
 if (token) {
   bandeau.classList.remove("cache");
   lienLogin.textContent = "logout";
+  filters.classList.add("cache");
 
   lienLogin.addEventListener("click", function (event) {
     event.preventDefault();

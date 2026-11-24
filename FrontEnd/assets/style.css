@@ -307,3 +307,7 @@ nav li.courant {
 #mode-edition.cache {
 	display: none;
 }
+
+.filters.cache {
+	display: none;
+}
