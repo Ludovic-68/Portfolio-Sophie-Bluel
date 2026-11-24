@@ -5,6 +5,7 @@ const filters = document.querySelector(".filters");
 const token = localStorage.getItem("token");
 const bandeau = document.querySelector("#mode-edition");
 const lienLogin = document.querySelector("#lien-login");
+const boutonModifier = document.querySelector("#bouton-modifier");
 let projets = []; // Liste de tous les projets, remplie par getWorks()
 
 // Récupération des travaux depuis l'API
@@ -100,6 +101,7 @@ function afficherCategorie(categorie) {
 
 if (token) {
   bandeau.classList.remove("cache");
+  boutonModifier.classList.remove("cache");
   lienLogin.textContent = "logout";
   filters.classList.add("cache");
 

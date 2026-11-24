@@ -60,6 +60,11 @@ header {
 	justify-content: space-between;
 	margin: 50px 0
 }
+
+header nav img {
+	width: 22px;
+}
+
 section {
 	margin: 50px 0
 }
@@ -309,5 +314,32 @@ nav li.courant {
 }
 
 .filters.cache {
+	display: none;
+}
+
+.titre-projets {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+#bouton-modifier {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: none;
+	border: none;
+	margin-bottom: 1.7em;
+	font-family: 'Work Sans';
+	font-size: 14px;
+	cursor: pointer;
+}
+
+#bouton-modifier img {
+	width: 15.58px;
+}
+
+#bouton-modifier.cache {
 	display: none;
 }
