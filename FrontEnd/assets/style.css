@@ -433,3 +433,102 @@ nav li.courant {
 	border-radius: 60px;
 	cursor: pointer;
 }
+
+#vue-galerie.cache {
+	display: none;
+}
+
+#vue-ajout.cache {
+	display: none;
+}
+
+/* Modale ajout photo*/
+
+.zone-photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 420px;
+	height: 169px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #E8F1F6;
+}
+
+.zone-photo img {
+	width: 68px;
+}
+
+.zone-photo label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 173px;
+	height: 36px;
+	background-color: #CBD6DC;
+	color: #306685;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.zone-photo input {
+	display: none;
+}
+
+.zone-photo p {
+	font-size: 10px;
+}
+
+#formulaire-ajout {
+	display: flex;
+	flex-direction: column;
+	width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.label-formulaire {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+#titre-photo {
+	height: 51px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: white;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-size: 1.2em;
+}
+
+#categorie-photo {
+	height: 51px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: white;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-size: 1.2em;
+}
+
+#formulaire-ajout input[type="submit"] {
+	width: 237px;
+	height: 36px;
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #A7A7A7;
+	color: white;
+	font-family: 'Syne';
+	font-size: 14px;
+	font-weight: 700;
+	border: none;
+	border-radius: 60px;
+	cursor: pointer;
+}
