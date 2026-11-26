@@ -1,12 +1,15 @@
 // Sélection des éléments HTML
 
+let projets = []; // Liste de tous les projets, remplie par getWorks()
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
 const token = localStorage.getItem("token"); // Récupération du token depuis le localStorage
 const bandeau = document.querySelector("#mode-edition"); 
 const lienLogin = document.querySelector("#lien-login");
 const boutonModifier = document.querySelector("#bouton-modifier"); 
-let projets = []; // Liste de tous les projets, remplie par getWorks()
+const modale = document.querySelector("#modale");
+const boutonFermer = document.querySelector("#bouton-fermer");
+
 
 // Récupération des travaux depuis l'API
 
@@ -111,3 +114,19 @@ if (token) {
     window.location.href = "./index.html";
   });
 }
+
+// Modale //
+
+boutonModifier.addEventListener("click", function () {
+  modale.classList.remove("cache");
+});
+
+boutonFermer.addEventListener("click", function () {
+  modale.classList.add("cache");
+});
+
+modale.addEventListener("click", function (event) {
+  if (event.target === modale) {
+    modale.classList.add("cache");
+  }
+});
