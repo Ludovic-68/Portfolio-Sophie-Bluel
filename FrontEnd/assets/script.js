@@ -2,10 +2,10 @@
 
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
-const token = localStorage.getItem("token");
-const bandeau = document.querySelector("#mode-edition");
+const token = localStorage.getItem("token"); // Récupération du token depuis le localStorage
+const bandeau = document.querySelector("#mode-edition"); 
 const lienLogin = document.querySelector("#lien-login");
-const boutonModifier = document.querySelector("#bouton-modifier");
+const boutonModifier = document.querySelector("#bouton-modifier"); 
 let projets = []; // Liste de tous les projets, remplie par getWorks()
 
 // Récupération des travaux depuis l'API
@@ -23,16 +23,16 @@ async function getWorks() {
     console.error(erreur.message);
   }
 }
-getWorks();
+getWorks(); 
 
-function afficherGalerie(liste) {
+function afficherGalerie(liste) { 
   gallery.textContent = "";
   for (let i = 0; i < liste.length; i++) {
     afficherProjet(liste[i]);
   }
 }
 
-function afficherProjet(projet) {
+function afficherProjet(projet) { 
   const figure = document.createElement("figure");
   const image = document.createElement("img");
   image.src = projet.imageUrl;
@@ -83,7 +83,7 @@ function afficherCategorie(categorie) {
   bouton.textContent = categorie.name;
 
   bouton.addEventListener("click", function () {
-    filters.querySelector(".active").classList.remove("active");
+    filters.querySelector(".active").classList.remove("active"); 
     bouton.classList.add("active");
     const projetsFiltres = [];
     for (let i = 0; i < projets.length; i++) {
@@ -100,14 +100,14 @@ function afficherCategorie(categorie) {
 // LocalStorage : Token
 
 if (token) {
-  bandeau.classList.remove("cache");
-  boutonModifier.classList.remove("cache");
+  bandeau.classList.remove("cache"); // Affiche le bandeau si l'utilisateur est connecté
+  boutonModifier.classList.remove("cache"); // Affiche le bouton "modifier" si l'utilisateur est connecté
   lienLogin.textContent = "logout";
-  filters.classList.add("cache");
+  filters.classList.add("cache"); // Cache les filtres si l'utilisateur est connecté
 
   lienLogin.addEventListener("click", function (event) {
-    event.preventDefault();
-    localStorage.removeItem("token");
+    event.preventDefault(); 
+    localStorage.removeItem("token"); // Supprime le token du localStorage
     window.location.href = "./index.html";
   });
 }

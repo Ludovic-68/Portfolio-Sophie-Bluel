@@ -343,3 +343,93 @@ nav li.courant {
 #bouton-modifier.cache {
 	display: none;
 }
+
+
+/* Modale */
+
+#modale.cache {
+	display: none;
+}
+
+#bouton-retour.cache {
+	display: none;
+}
+
+#modale {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modale-contenu {
+	position: relative;
+	text-align: center;
+	background-color: white;
+	width: 570px;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+#bouton-retour {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+#bouton-fermer {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.modale-contenu h3 {
+	font-size: 26px;
+	font-weight: 400;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.modale-galerie {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 420px;
+	min-height: 332px;
+}
+
+.modale-contenu hr {
+	width: 420px;
+	border: none;
+	border-top: 1px solid #B3B3B3;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bouton-ajouter-photo {
+	width: 237px;
+	height: 36px;
+	background-color: #1D6154;
+	color: white;
+	font-family: 'Syne';
+	font-size: 14px;
+	font-weight: 700;
+	border: none;
+	border-radius: 60px;
+	cursor: pointer;
+}
