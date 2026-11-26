@@ -9,6 +9,10 @@ const lienLogin = document.querySelector("#lien-login");
 const boutonModifier = document.querySelector("#bouton-modifier"); 
 const modale = document.querySelector("#modale");
 const boutonFermer = document.querySelector("#bouton-fermer");
+const vueGalerie = document.querySelector("#vue-galerie");
+const vueAjout = document.querySelector("#vue-ajout");
+const boutonAjouterPhoto = document.querySelector("#bouton-ajouter-photo");
+const boutonRetour = document.querySelector("#bouton-retour");
 
 
 // Récupération des travaux depuis l'API
@@ -117,7 +121,14 @@ if (token) {
 
 // Modale //
 
+function reinitialiserModale() {
+  vueGalerie.classList.remove("cache");
+  vueAjout.classList.add("cache");
+  boutonRetour.classList.add("cache");
+}
+
 boutonModifier.addEventListener("click", function () {
+  reinitialiserModale();
   modale.classList.remove("cache");
 });
 
@@ -129,4 +140,18 @@ modale.addEventListener("click", function (event) {
   if (event.target === modale) {
     modale.classList.add("cache");
   }
+});
+
+// Passer de la galerie au formulaire d'ajout
+boutonAjouterPhoto.addEventListener("click", function () {
+  vueGalerie.classList.add("cache");
+  vueAjout.classList.remove("cache");
+  boutonRetour.classList.remove("cache");
+});
+
+// Revenir du formulaire à la galerie
+boutonRetour.addEventListener("click", function () {
+  vueAjout.classList.add("cache");
+  vueGalerie.classList.remove("cache");
+  boutonRetour.classList.add("cache");
 });
